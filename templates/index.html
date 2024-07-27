@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Your Website</title>
+    <style>
+        /* Basic styling for demonstration */
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .nav-links a:hover {
+            background-color: #e9ecef;
+        }
+        /* Center the marquee text */
+        .marquee-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+            position: relative;
+        }
+        .marquee-text {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 24px;
+            color: black; /* Blue color for the text */
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <span class="navbar-brand">Welcome to the Website!</span>
+            <div class="nav-links">
+                <span>Hi Guest</span>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            </div>
+        </header>
+        <main>
+            <div class="marquee-container">
+                <div class="marquee-text">Explore our platform and discover great features.</div>
+            </div>
+        </main>
+        <footer>
+            <!-- Optional: Add footer content -->
+        </footer>
+    </div>
+</body>
+</html>

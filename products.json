@@ -1,0 +1,280 @@
+{
+    "categories": [
+        "Electronics",
+        "Fashion",
+        "Home & Kitchen",
+        "Beauty & Personal Care",
+        "Sports & Outdoors",
+        "Books",
+        "Toys & Games",
+        "Automotive",
+        "Health & Wellness",
+        "Baby Products",
+        "Pet Supplies",
+        "Office Supplies",
+        "Grocery & Gourmet Food",
+        "Jewelry",
+        "Shoes",
+        "Furniture",
+        "Garden & Outdoor",
+        "Tools & Home Improvement",
+        "Music & Instruments",
+        "Arts & Crafts",
+        "Travel Accessories"
+    ],
+    
+    "products": [
+        {
+            "id": 1,
+            "name": "OnePlus 11",
+            "year": "2024",
+            "price": "15.99",
+            "categories": [
+                "Electronics"
+            ],
+            "brand": "OnePlus",
+            "description": "A high-performance smartphone with advanced features.",
+            "imageUrl": "oneplus.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Summer Dress",
+            "year": "2024",
+            "price": "29.99",
+            "categories": [
+                "Fashion"
+            ],
+            "brand": "Fashionista",
+            "description": "A stylish summer dress perfect for any occasion.",
+            "imageUrl": "summer.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "KitchenAid Stand Mixer",
+            "year": "2024",
+            "price": "399.99",
+            "categories": [
+                "Home & Kitchen"
+            ],
+            "brand": "KitchenAid",
+            "description": "A powerful stand mixer for all your baking needs.",
+            "imageUrl": "mixer.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Organic Facial Cleanser",
+            "year": "2024",
+            "price": "24.99",
+            "categories": [
+                "Beauty & Personal Care"
+            ],
+            "brand": "PureSkin",
+            "description": "A gentle facial cleanser made with organic ingredients.",
+            "imageUrl": "facecream.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Camping Tent",
+            "year": "2024",
+            "price": "89.99",
+            "categories": [
+                "Sports & Outdoors"
+            ],
+            "brand": "Outland",
+            "description": "A durable and spacious tent for your camping adventures.",
+            "imageUrl": "camping.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "The Great Gatsby",
+            "year": "2024",
+            "price": "14.99",
+            "categories": [
+                "Books"
+            ],
+            "brand": "Scribner",
+            "description": "A classic novel by F. Scott Fitzgerald.",
+            "imageUrl": "gatsby.jpeg"
+        },
+        {
+            "id": 7,
+            "name": "LEGO Star Wars Set",
+            "year": "2024",
+            "price": "49.99",
+            "categories": [
+                "Toys & Games"
+            ],
+            "brand": "LEGO",
+            "description": "A fun and detailed LEGO Star Wars building set.",
+            "imageUrl": "lego.jpeg"
+        },
+        {
+            "id": 8,
+            "name": "Car Battery Charger",
+            "year": "2024",
+            "price": "59.99",
+            "categories": [
+                "Automotive"
+            ],
+            "brand": "AutoTech",
+            "description": "A reliable car battery charger for various vehicles.",
+            "imageUrl": "carcharger.jpeg"
+        },
+        {
+            "id": 9,
+            "name": "Vitamins and Supplements",
+            "year": "2024",
+            "price": "29.99",
+            "categories": [
+                "Health & Wellness"
+            ],
+            "brand": "WellnessPro",
+            "description": "A comprehensive set of vitamins and supplements.",
+            "imageUrl": "vitamin.jpeg"
+        },
+        {
+            "id": 10,
+            "name": "Baby Monitor",
+            "year": "2024",
+            "price": "79.99",
+            "categories": [
+                "Baby Products"
+            ],
+            "brand": "BabySafe",
+            "description": "A high-tech baby monitor with clear audio and video.",
+            "imageUrl": "baby.jpeg"
+        },
+        {
+            "id": 11,
+            "name": "Pet Bed",
+            "year": "2024",
+            "price": "39.99",
+            "categories": [
+                "Pet Supplies"
+            ],
+            "brand": "PetComfort",
+            "description": "A comfortable and cozy bed for your furry friend.",
+            "imageUrl": "petbed.jpeg"
+        },
+        {
+            "id": 12,
+            "name": "Office Chair",
+            "year": "2024",
+            "price": "129.99",
+            "categories": [
+                "Office Supplies"
+            ],
+            "brand": "ErgoSeat",
+            "description": "An ergonomic office chair designed for comfort.",
+            "imageUrl": "office.jpeg"
+        },
+        {
+            "id": 13,
+            "name": "Organic Coffee Beans",
+            "year": "2024",
+            "price": "19.99",
+            "categories": [
+                "Grocery & Gourmet Food"
+            ],
+            "brand": "BeanMaster",
+            "description": "Freshly roasted organic coffee beans for a rich flavor.",
+            "imageUrl": "coffee.jpeg"
+        },
+        {
+            "id": 14,
+            "name": "Diamond Necklace",
+            "year": "2024",
+            "price": "999.99",
+            "categories": [
+                "Jewelry"
+            ],
+            "brand": "LuxuryGems",
+            "description": "A stunning diamond necklace for special occasions.",
+            "imageUrl": "necklace.jpeg"
+        },
+        {
+            "id": 15,
+            "name": "Running Shoes",
+            "year": "2024",
+            "price": "89.99",
+            "categories": [
+                "Shoes"
+            ],
+            "brand": "RunFast",
+            "description": "Comfortable running shoes designed for optimal performance.",
+            "imageUrl": "shoes.jpeg"
+        },
+        {
+            "id": 16,
+            "name": "Sofa Set",
+            "year": "2024",
+            "price": "799.99",
+            "categories": [
+                "Furniture"
+            ],
+            "brand": "HomeLux",
+            "description": "A stylish and comfortable sofa set for your living room.",
+            "imageUrl": "sofa.jpeg"
+        },
+        {
+            "id": 17,
+            "name": "Garden Hose",
+            "year": "2024",
+            "price": "34.99",
+            "categories": [
+                "Garden & Outdoor"
+            ],
+            "brand": "GreenThumb",
+            "description": "A durable garden hose for all your watering needs.",
+            "imageUrl": "hose.jpeg"
+        },
+        {
+            "id": 18,
+            "name": "Cordless Drill",
+            "year": "2024",
+            "price": "119.99",
+            "categories": [
+                "Tools & Home Improvement"
+            ],
+            "brand": "PowerTools",
+            "description": "A versatile cordless drill for various home improvement projects.",
+            "imageUrl": "drill.jpeg"
+        },
+        {
+            "id": 19,
+            "name": "Guitar",
+            "year": "2024",
+            "price": "149.99",
+            "categories": [
+                "Music & Instruments"
+            ],
+            "brand": "MusicPro",
+            "description": "A high-quality guitar suitable for beginners and professionals.",
+            "imageUrl": "guitar.jpeg"
+        },
+        {
+            "id": 20,
+            "name": "Painting Supplies",
+            "year": "2024",
+            "price": "24.99",
+            "categories": [
+                "Arts & Crafts"
+            ],
+            "brand": "ArtMaster",
+            "description": "A set of painting supplies for artists of all levels.",
+            "imageUrl": "painting.jpeg"
+        },
+        {
+            "id": 21,
+            "name": "Travel Backpack",
+            "year": "2024",
+            "price": "69.99",
+            "categories": [
+                "Travel Accessories"
+            ],
+            "brand": "Voyager",
+            "description": "A durable and spacious travel backpack for all your adventures.",
+            "imageUrl": "backpack.jpeg"
+        }
+    ]
+}

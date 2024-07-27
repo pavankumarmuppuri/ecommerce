@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .nav-links a:hover {
+            background-color: #e9ecef;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 200px;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .product img {
+            height: 40%;
+            width: 100%; /* Ensure the image takes the full width of the container */
+            border-radius: 5px;
+            object-fit: contain; /* Scale the image to fit within the container */
+        }
+        
+        .product .details {
+            padding: 10px 0;
+            overflow-y: auto;
+        }
+        
+        .product .details h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .product .more-details {
+            display: none;
+            padding-top: 10px;
+        }
+        .product.expanded .more-details {
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleDetails(button) {
+            var product = button.closest('.product');
+            product.classList.toggle('expanded');
+            button.textContent = product.classList.contains('expanded') ? 'Less' : 'More';
+        }
+
+        function filterProducts() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const categorySelect = document.getElementById('category').value;
+            const products = document.querySelectorAll('.product');
+
+            products.forEach(product => {
+                const title = product.querySelector('h3').textContent.toLowerCase();
+                const categories = product.getAttribute('data-categories').toLowerCase();
+
+                const matchesSearch = title.includes(searchInput);
+                const matchesCategory = !categorySelect || categories.includes(categorySelect.toLowerCase());
+
+                if (matchesSearch && matchesCategory) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function handleImageError(image) {
+            image.onerror = null;
+            image.src = 'https://via.placeholder.com/640x480?text=No+Image+Available';
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="navbar">
+            <span class="navbar-brand">ECommerce</span>
+            <div class="nav-links">
+                <span>Hi {{ user.first_name }}</span>
+                <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </header>
+        <main>
+            <h2>Welcome, {{ user.first_name }}!</h2>
+            <div class="form-group">
+                <label for="search">Search Products:</label>
+                <input type="text" class="form-control" id="search" onkeyup="filterProducts()" placeholder="Search by title">
+            </div>
+            <form method="POST" action="{{ url_for('dashboard') }}">
+                <div class="form-group">
+                    <label for="category">Select Category:</label>
+                    <select class="form-control" id="category" name="category" onchange="filterProducts()">
+                        <option value="">All Categories</option>
+                        {% for category in categories %}
+                            <option value="{{ category }}" {% if request.form.get('category') == category %}selected{% endif %}>{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </form>
+            <div class="products">
+                {% for product in products %}
+                    <div class="product" data-categories="{{ product['categories']|join(',') }}">
+                        {% if product['imageUrl'] %}
+                            <img src="{{ url_for('static', filename='images/' ~ product['imageUrl']) }}" class="img-fluid" alt="{{ product['name'] }}" onerror="handleImageError(this)">
+                        {% else %}
+                            <img src="https://via.placeholder.com/640x480?text=No+Image+Available" class="img-fluid" alt="No image available">
+                        {% endif %}
+                        <div class="details">
+                            <h3>{{ product['name'] }}</h3>
+                            <p>{{ product['year'] }}</p>
+                            <p>${{ product['price'] }}</p>
+                            <button class="btn btn-dark" onclick="toggleDetails(this)">More</button>
+                    
+                            <div class="more-details">
+                                <p><strong>Brand:</strong> {{ product['brand'] }}</p>
+                                <p><strong>Description:</strong> {{ product['description'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>
